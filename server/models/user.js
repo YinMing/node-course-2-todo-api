@@ -1,17 +1,22 @@
 var mongoose = require('mongoose');
 //make a user model (email, pwd)
 //email - require it - trim it - set type - set min length of 1
-var User = mongoose.model('User',{
-  email:{
+var User = mongoose.model('users',{
+  name:{
     type: String,
     required: true,
     minlength: 1,
     trim: true
   },
-  password:{
+  age:{
+    type: Number,
+    required: true,
+  },
+  location:{
     type: String,
     required: true,
-    minlength: 6
+    minlength: 1,
+    trim: true
   }
 });
 
