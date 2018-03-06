@@ -26,13 +26,12 @@ app.post('/todos', (req, res)=>{
 
 //select resource, GET
 app.get('/todos', (req, res)=>{
-  var todo = new Todo();
-  todo.find().then((doc)=>
+  Todo.find().then((todos)=>
   {
-      console.log(doc);
+      res.send({todos});
   }, (e)=>
   {
-      console.log(e);
+      res.status(400).send(e);
   });
 });
 
